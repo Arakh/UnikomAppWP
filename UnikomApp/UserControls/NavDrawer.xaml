@@ -1,0 +1,157 @@
+﻿<Grid x:Name="userControl" x:Class="UnikomApp.UserControl.NavDrawer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             mc:Ignorable="d"
+    d:DesignHeight="800" d:DesignWidth="450" RenderTransformOrigin="0.5,0.5">
+      <!--FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"-->
+    
+	<Grid.Resources>
+		<Storyboard x:Name="SlideNavBarOpen">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="userControl">
+				<SplineDoubleKeyFrame KeyTime="0" Value="-400"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="SlideNavBarClose">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="userControl">
+				<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0" Value="-400"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</Grid.Resources>
+	<Grid.RenderTransform>
+		<CompositeTransform/>
+	</Grid.RenderTransform>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" Width="450" >
+        <!--<Grid.RenderTransform>
+            <CompositeTransform x:Name="NavDrawTransform" />
+        </Grid.RenderTransform>
+        <toolkit:GestureService.GestureListener>
+            <toolkit:GestureListener
+                DragDelta="GestureListener_DragDelta"
+                DragCompleted="GestureListener_DragCompleted"
+                />
+        </toolkit:GestureService.GestureListener>-->
+        <Grid Background="#131F2F" Width="400" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical">
+                <Image Source="/Assets/LogoSideBar.png" Width="100" Margin="0,20,0,20"/>
+                <!--Tentang UNIKOM-->
+                <Grid Tag="HomePage" Margin="0,0,0,5" Tap="NavigateToPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/LogoSmall.png" Width="50" Grid.Column="0"  />
+                    <TextBlock Text="Tentang UNIKOM" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP SemiLight" FontSize="18" />
+                    <Image Source="/Assets/Next.png" Grid.Column="2" Width="15" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+                <!--Fakultas dan Jurusan-->
+                <Grid Tag="FakultasPage" Margin="0,0,0,5" Tap="NavigateToPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/FakultasDanJurusan.png" Width="50" Grid.Column="0"  />
+                    <TextBlock Text="Fakultas dan Jurusan" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP SemiLight" FontSize="18" />
+                    <Image Source="/Assets/Next.png" Grid.Column="2" Width="15" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+                <!--Fasilitas-->
+                <Grid Tag="FasilitasPage" Margin="0,0,0,5" Tap="NavigateToPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/Fasilitas.png" Width="50" Grid.Column="0"  />
+                    <TextBlock Text="Fasilitas" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP SemiLight" FontSize="18" />
+                    <Image Source="/Assets/Next.png" Grid.Column="2" Width="15" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+                <!--Prestasi dan Penghargaan-->
+                <Grid Tag="PrestasiPage" Margin="0,0,0,5" Tap="NavigateToPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/PrestasiDanPenghargaan.png" Width="50" Grid.Column="0"  />
+                    <TextBlock Text="Prestasi dan Penghargaan" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP SemiLight" FontSize="18" />
+                    <Image Source="/Assets/Next.png" Grid.Column="2" Width="15" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+                <!--Penerimaan Mahasiswa Baru-->
+                <Grid Tag="PenerimaanMahasiswaBaru" Margin="0,0,0,5" Tap="NavigateToPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/PenerimaanMahasiswaBaru.png" Width="50" Grid.Column="0"  />
+                    <TextBlock Text="Penerimaan Mahasiswa Baru" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP SemiLight" FontSize="18" />
+                    <Image Source="/Assets/Next.png" Grid.Column="2" Width="15" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+                <!--Aktifitas Kemahasiswaan-->
+                <Grid Tag="AktifitasKemahasiswaan" Margin="0,0,0,5" Tap="NavigateToPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/AktifitasMahasiswa.png" Width="50" Grid.Column="0"  />
+                    <TextBlock Text="Aktifitas Kemahasiswaan" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP SemiLight" FontSize="18" />
+                    <Image Source="/Assets/Next.png" Grid.Column="2" Width="15" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+                <!--Aktifitas Kontak-->
+                <Grid Tag="AktifitasKontak" Margin="0,0,0,5" Tap="NavigateToPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/KontakSideBar.png" Width="50" Grid.Column="0"  />
+                    <TextBlock Text="Aktifitas Kemahasiswaan" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP SemiLight" FontSize="18" />
+                    <Image Source="/Assets/Next.png" Grid.Column="2" Width="15" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+                <!--Lokasi-->
+                <Grid Tag="LokasiPage" Margin="0,0,0,5" Tap="NavigateToPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/Lokasi.png" Width="50" Grid.Column="0"  />
+                    <TextBlock Text="Lokasi" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP SemiLight" FontSize="18" />
+                    <Image Source="/Assets/Next.png" Grid.Column="2" Width="15" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+                <!--Bantuan-->
+                <Grid Tag="Bantuan" Margin="0,0,0,5" Tap="NavigateToPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/Bantuan.png" Width="50" Grid.Column="0"  />
+                    <TextBlock Text="Bantuan" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP SemiLight" FontSize="18" />
+                    <Image Source="/Assets/Next.png" Grid.Column="2" Width="15" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+                <!--Tentang Aplikasi-->
+                <Grid Tag="TentangAplikasi" Margin="0,0,0,5" Tap="NavigateToPage">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/TentangAplikasi.png" Width="50" Grid.Column="0"  />
+                    <TextBlock Text="Tentang Aplikasi" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Segoe WP SemiLight" FontSize="18" />
+                    <Image Source="/Assets/Next.png" Grid.Column="2" Width="15" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Grid>

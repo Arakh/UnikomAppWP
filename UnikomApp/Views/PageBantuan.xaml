@@ -1,0 +1,141 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="UnikomApp.Views.PageBantuan"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Image Source="/Assets/TheMiracle.jpg"></Image>
+        <StackPanel>
+            <Grid Background="#163B6D" Height="70">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/ActionMenu.png" Grid.Column="0" />
+                <Image Source="/Assets/LogoSmall.png" Grid.Column="1" />
+                <TextBlock Text="Bantuan" Grid.Column="2" VerticalAlignment="Center" />
+                <Image Source="/Assets/Pertanyaan.png" Grid.Column="3" HorizontalAlignment="Right" Stretch="None" Margin="0,0,10,0" />
+            </Grid>
+        </StackPanel>
+        <StackPanel Margin="0,150,0,0">
+            <Grid Margin="10,10,10,0" Background="#95163B6D" Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/Pertanyaan.png" Grid.Column="0" />
+                <TextBlock Text="Pertanyaan" Grid.Column="2" VerticalAlignment="Center" />
+            </Grid>
+            <Grid Margin="10,10,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid Height="50" Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="10,10,0,0" Grid.Column="0" Text="Lorem ipsum dolor sir amet?" />
+                        <Image Source="/Assets/Next.png" Grid.Column="1" HorizontalAlignment="Right" Stretch="None" Margin="0,0,10,0" />
+                    </Grid>
+                </Grid>
+                <Grid Height="50" Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="10,10,0,0" Grid.Column="0" Text="Lorem ipsum dolor sir amet?" />
+                        <Image Source="/Assets/Next.png" Grid.Column="1" HorizontalAlignment="Right" Stretch="None" Margin="0,0,10,0" />
+                    </Grid>
+                </Grid>
+                <Grid Height="50" Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="10,10,0,0" Grid.Column="0" Text="Lorem ipsum dolor sir amet?" />
+                        <Image Source="/Assets/Next.png" Grid.Column="1" HorizontalAlignment="Right" Stretch="None" Margin="0,0,10,0" />
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </StackPanel>
+        <StackPanel Margin="0,400,0,0">
+            <Grid Margin="10,10,10,0" Background="#95163B6D" Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/Topik.png" Grid.Column="0" />
+                <TextBlock Text="Topik" Grid.Column="2" VerticalAlignment="Center" />
+            </Grid>
+            <Grid Margin="10,10,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid Height="50" Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="10,10,0,0" Grid.Column="0" Text="Lorem ipsum dolor sir amet?" />
+                        <Image Source="/Assets/Next.png" Grid.Column="1" HorizontalAlignment="Right" Stretch="None" Margin="0,0,10,0" />
+                    </Grid>
+                </Grid>
+                <Grid Height="50" Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="10,10,0,0" Grid.Column="0" Text="Lorem ipsum dolor sir amet?" />
+                        <Image Source="/Assets/Next.png" Grid.Column="1" HorizontalAlignment="Right" Stretch="None" Margin="0,0,10,0" />
+                    </Grid>
+                </Grid>
+                <Grid Height="50" Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="10,10,0,0" Grid.Column="0" Text="Lorem ipsum dolor sir amet?" />
+                        <Image Source="/Assets/Next.png" Grid.Column="1" HorizontalAlignment="Right" Stretch="None" Margin="0,0,10,0" />
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>

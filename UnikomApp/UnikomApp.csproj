@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{518DC53F-1B92-49FB-9798-77240E85EE9E}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnikomApp</RootNamespace>
+    <AssemblyName>UnikomApp</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>UnikomApp_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>UnikomApp.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget />
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget />
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <PlatformTarget />
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <PlatformTarget />
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DelegateCommand.cs" />
+    <Compile Include="Common\ViewModelBase.cs" />
+    <Compile Include="Helper\NavDrawMargin.cs" />
+    <Compile Include="Views\FakultasPage.xaml.cs">
+      <DependentUpon>FakultasPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavDrawer.xaml.cs">
+      <DependentUpon>NavDrawer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HymneMarsPage.xaml.cs">
+      <DependentUpon>HymneMarsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FasilitasPage.xaml.cs">
+      <DependentUpon>FasilitasPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JurusanPage.xaml.cs">
+      <DependentUpon>JurusanPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LokasiPage.xaml.cs">
+      <DependentUpon>LokasiPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParkirPage.xaml.cs">
+      <DependentUpon>ParkirPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrestasiPage.xaml.cs">
+      <DependentUpon>PrestasiPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SambutanRektorPage.xaml.cs">
+      <DependentUpon>SambutanRektorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SejarahPage.xaml.cs">
+      <DependentUpon>SejarahPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Transaction.cs" />
+    <Compile Include="Views\VisiMisiPage.xaml.cs">
+      <DependentUpon>VisiMisiPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Views\FakultasPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\NavDrawer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\HymneMarsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FasilitasPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\JurusanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LokasiPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ParkirPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PrestasiPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SambutanRektorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SejarahPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\VisiMisiPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\1-the miracle-001.jpg" />
+    <Content Include="Assets\1.jpg" />
+    <Content Include="Assets\2.jpg" />
+    <Content Include="Assets\3.jpg" />
+    <Content Include="Assets\4.jpg" />
+    <Content Include="Assets\action menu.png" />
+    <Content Include="Assets\ActionMenu.png" />
+    <Content Include="Assets\AktifitasMahasiswa.png" />
+    <Content Include="Assets\AkuntansiKomputerisasi.png" />
+    <Content Include="Assets\Back.png" />
+    <Content Include="Assets\background.png" />
+    <Content Include="Assets\Backgroundfake.jpg" />
+    <Content Include="Assets\Bantuan.png" />
+    <Content Include="Assets\Beasiswa.png" />
+    <Content Include="Assets\DesainDan Komunikasi Visual.png" />
+    <Content Include="Assets\Ekonomi.png" />
+    <Content Include="Assets\FakultasDanJurusan.png" />
+    <Content Include="Assets\Fasilitas.png" />
+    <Content Include="Assets\FasilitasFake.jpg" />
+    <Content Include="Assets\FasilitasOnline.png" />
+    <Content Include="Assets\GedungBaru.png" />
+    <Content Include="Assets\GetStarted.png" />
+    <Content Include="Assets\Help.png" />
+    <Content Include="Assets\HymneDanMars.png" />
+    <Content Include="Assets\IlmuSosialDanPolitik.png" />
+    <Content Include="Assets\InternasiaonalProgram.png" />
+    <Content Include="Assets\Kerjasama.png" />
+    <Content Include="Assets\Kontak.png" />
+    <Content Include="Assets\KontakSideBar.png" />
+    <Content Include="Assets\Laboratorium.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\LogoSideBar.png" />
+    <Content Include="Assets\LogoSmall.png" />
+    <Content Include="Assets\Lokasi.png" />
+    <Content Include="Assets\ManajemenInformatika.png" />
+    <Content Include="Assets\Mosque.png" />
+    <Content Include="Assets\Next.png" />
+    <Content Include="Assets\Parking.png" />
+    <Content Include="Assets\Pause.png" />
+    <Content Include="Assets\PenerimaanMahasiswaBaru.png" />
+    <Content Include="Assets\PerencanaanWilayah.png" />
+    <Content Include="Assets\Perpustakaan.png" />
+    <Content Include="Assets\Pertanyaan.png" />
+    <Content Include="Assets\Play.png" />
+    <Content Include="Assets\PrestasiDanPenghargaan.png" />
+    <Content Include="Assets\Ruangan.png" />
+    <Content Include="Assets\sambutan Rektor.png" />
+    <Content Include="Assets\SambutanRektor.png" />
+    <Content Include="Assets\Sastra.png" />
+    <Content Include="Assets\Sejarah.png" />
+    <Content Include="Assets\Separator.png" />
+    <Content Include="Assets\Separator2.png" />
+    <Content Include="Assets\Separator3.png" />
+    <Content Include="Assets\SmartCard.png" />
+    <Content Include="Assets\Stop.png" />
+    <Content Include="Assets\TabPage.png" />
+    <Content Include="Assets\Taman.png" />
+    <Content Include="Assets\TeknikArsitektur.png" />
+    <Content Include="Assets\TeknikDanIlmuKomputer.png" />
+    <Content Include="Assets\TeknikElektro.png" />
+    <Content Include="Assets\TeknikIndustri.png" />
+    <Content Include="Assets\TeknikInformatika.png" />
+    <Content Include="Assets\TeknikKomputer.png" />
+    <Content Include="Assets\TeknikSipil.png" />
+    <Content Include="Assets\TentangAplikasi.png" />
+    <Content Include="Assets\TentangUnikom.png" />
+    <Content Include="Assets\Toilet.png" />
+    <Content Include="Assets\Topik.png" />
+    <Content Include="Assets\TulisanUA.png" />
+    <Content Include="Assets\unikom1.png" />
+    <Content Include="Assets\unikom2.png" />
+    <Content Include="Assets\unikom3.png" />
+    <Content Include="Assets\unikom4.png" />
+    <Content Include="Assets\unikom5.png" />
+    <Content Include="Assets\VisiDanMisi.png" />
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="README_FIRST.txt" />
+    <Content Include="SplashScreenImage.jpg" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>
