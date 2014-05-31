@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using UnikomApp.ViewModels;
 
 namespace UnikomApp
 {
@@ -20,7 +21,7 @@ namespace UnikomApp
         public menujurusan()
         {
             InitializeComponent();
-
+            this.DataContext = new FakultasViewModel();
             // Set the data context of the listbox control to the sample data
             //DataContext = App.ViewModel;
             //this.Loaded += new RoutedEventHandler(MainPage_Loaded);
@@ -86,7 +87,8 @@ namespace UnikomApp
 
         private void inputHandlerTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Sarjana_page.xaml", UriKind.Relative));
+            Grid grid = (Grid)sender;
+            NavigationService.Navigate(new Uri("/JurusanPage.xaml?idFakultas="+grid.Tag.ToString(), UriKind.Relative));
         }
 
     }

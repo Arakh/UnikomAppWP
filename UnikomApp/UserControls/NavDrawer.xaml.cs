@@ -59,10 +59,10 @@ namespace UnikomApp.UserControl
 
         private void NavigateToPage(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            Button button = (Button)sender;
+            Grid grid = (Grid)sender;
 
             var frame = App.Current.RootVisual as PhoneApplicationFrame;
-            frame.Navigate(new Uri("/Views/" + button.Tag.ToString() + ".xaml", UriKind.Relative));
+            frame.Navigate(new Uri("/Views/" + grid.Tag.ToString() + ".xaml", UriKind.Relative));
         }
     }
 }

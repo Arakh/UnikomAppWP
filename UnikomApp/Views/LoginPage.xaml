@@ -158,7 +158,7 @@
             <TextBlock x:Name="textJudul" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Fakultas" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
             <TextBlock x:Name="textIsi" TextWrapping="Wrap" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0" Width="419" Height="91"/>
         </StackPanel>
-        <Button x:Name="getStarted" Grid.Row="1" Content="Get Started" HorizontalAlignment="Center" Margin="32,211,32,72"  VerticalAlignment="Center" Width="416" Style="{StaticResource metroLight}" Height="72" />
+        <Button x:Name="getStarted" Grid.Row="1" Content="Get Started" HorizontalAlignment="Center" Margin="32,211,32,72"  VerticalAlignment="Center" Width="416" Style="{StaticResource metroLight}" Height="72" Tap="getStarted_Tap" />
 
 
     </Grid>

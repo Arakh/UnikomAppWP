@@ -6,7 +6,9 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768" 
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -88,24 +90,39 @@
 
             <!-- item kedua -->
             <controls:PivotItem Tag="Sarjana" Margin="0">
-                <ListBox >
-                    <Grid Background="#083A80" Height="100" Width="435" Margin="20,20,0,0" Tap="inputHandlerTap">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Margin="10,10,10,10" Source="/Assets/TeknikDanIlmuKomputer.png" Grid.Column="0"/>
-                        <Grid Grid.Column="1" Margin="20,0,0,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Margin="0,20,0,0" Grid.Row="0" Text="Teknik dan Ilmu Komputer "  FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
-                            <TextBlock Grid.Row="1" Text="Dekan :  "  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
+                <ListBox x:Name="ListSarjana" ItemsSource="{Binding FakultasCollection}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Tag="{Binding id_fakultas}" Background="#083A80" Height="100" Width="435" Margin="20,20,0,0" Tap="inputHandlerTap">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Margin="10,10,10,10" Source="{Binding img_ic_fakultas}" Grid.Column="0"/>
+                                <Grid Grid.Column="1" Margin="20,0,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Margin="0,20,0,0" Grid.Row="0" Text="{Binding judul_fakultas}"  FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                                        <TextBlock Text="Dekan :  "  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                                        <TextBlock Text="{Binding nama_dekan}"  FontSize="17" HorizontalAlignment="Left"   />
+                                    </StackPanel>
 
-                        </Grid>
-                    </Grid>
-                    <Grid Background="#083A80" Height="100" Width="435" Margin="20,10,0,0">
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SetSarjanaFakultasIdCommand}" 
+                                                   CommandParameter="{Binding Path=SelectedItemSarjana, ElementName=ListSarjana}"/>
+                            <ec:NavigateToPageAction TargetPage="/Views/JurusanPage.xaml" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <!--<Grid Background="#083A80" Height="100" Width="435" Margin="20,10,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
@@ -168,7 +185,7 @@
                             <TextBlock Grid.Row="1" Text="Dekan :  "  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
 
                         </Grid>
-                    </Grid>
+                    </Grid>-->
 
 
                 </ListBox>

@@ -132,6 +132,11 @@ namespace UnikomApp.Views
             }
         }
 
+        private void getStarted_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/HomePage.xaml",UriKind.Relative));
+        }
+
 
 
 

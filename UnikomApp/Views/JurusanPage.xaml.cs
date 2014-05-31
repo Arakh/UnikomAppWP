@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using UnikomApp.ViewModels;
 
 namespace UnikomApp.Views
 {
@@ -15,6 +16,7 @@ namespace UnikomApp.Views
         public PageJurusan()
         {
             InitializeComponent();
+            DataContext = new JurusanViewModel();
         }
     }
 }
