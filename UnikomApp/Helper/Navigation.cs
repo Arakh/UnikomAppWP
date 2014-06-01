@@ -9,5 +9,8 @@ namespace UnikomApp.Helper
     public static class Navigation
     {
         public static String Id;
+        public static String Id_Jenjang;
+        public static String Id_;
+
     }
 }

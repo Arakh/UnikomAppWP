@@ -79,17 +79,49 @@
 
         <controls:Pivot x:Name="Pivot_Control" Margin="0,174,0,0" SelectionChanged="Pivot_SelectionChanged" >
             <controls:Pivot.Background>
-                <ImageBrush ImageSource="/Assets/1-the miracle-001.jpg" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="/Assets/the miracle.jpg" Stretch="UniformToFill"/>
             </controls:Pivot.Background>
 
             <!-- item pertama -->
-            <controls:PivotItem Tag="Diploma" Margin="0" Tap="inputHandlerTap">
+            <controls:PivotItem Tag="1" Margin="0">
+                <ListBox x:Name="ListDiploma" ItemsSource="{Binding DiplomaCollection}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Tag="{Binding id_fakultas}" Background="#083A80" Height="100" Width="435" Margin="20,20,0,0" Tap="inputHandlerTap">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Margin="10,10,10,10" Source="{Binding img_ic_fakultas}" Grid.Column="0"/>
+                                <Grid Grid.Column="1" Margin="20,0,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Margin="0,20,0,0" Grid.Row="0" Text="{Binding judul_fakultas}"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                                        <TextBlock Text="Dekan :  "  FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                                        <TextBlock Text="{Binding nama_dekan}"  FontSize="14" HorizontalAlignment="Left"   />
+                                    </StackPanel>
 
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SetDiplomaFakultasIdCommand}" 
+                                                   CommandParameter="{Binding Path=SelectedItem, ElementName=ListDiploma}"/>
+                            <ec:NavigateToPageAction TargetPage="/Views/JurusanPage.xaml" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ListBox>
 
             </controls:PivotItem>
 
             <!-- item kedua -->
-            <controls:PivotItem Tag="Sarjana" Margin="0">
+            <controls:PivotItem Tag="2" Margin="0">
                 <ListBox x:Name="ListSarjana" ItemsSource="{Binding FakultasCollection}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
@@ -106,8 +138,8 @@
                                     </Grid.RowDefinitions>
                                     <TextBlock Margin="0,20,0,0" Grid.Row="0" Text="{Binding judul_fakultas}"  FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
                                     <StackPanel Orientation="Horizontal" Grid.Row="1">
-                                        <TextBlock Text="Dekan :  "  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center"  />
-                                        <TextBlock Text="{Binding nama_dekan}"  FontSize="17" HorizontalAlignment="Left"   />
+                                        <TextBlock Text="Dekan :  "  FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                                        <TextBlock Text="{Binding nama_dekan}"  FontSize="14" HorizontalAlignment="Left"   />
                                     </StackPanel>
 
                                 </Grid>
@@ -118,7 +150,7 @@
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <i:InvokeCommandAction Command="{Binding SetSarjanaFakultasIdCommand}" 
-                                                   CommandParameter="{Binding Path=SelectedItemSarjana, ElementName=ListSarjana}"/>
+                                                   CommandParameter="{Binding Path=SelectedItem, ElementName=ListSarjana}"/>
                             <ec:NavigateToPageAction TargetPage="/Views/JurusanPage.xaml" />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
@@ -193,59 +225,39 @@
 
 
             <!-- item ketiga -->
-            <controls:PivotItem Tag="PascaSarjana" Margin="0" >
-                <ListBox >
-                    <Grid Background="#083A80" Height="100" Width="435" Margin="20,20,0,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Margin="10,10,10,10" Source="/Assets/TeknikDanIlmuKomputer.png" Grid.Column="0"/>
-                        <Grid Grid.Column="1" Margin="20,0,0,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Margin="0,20,0,0" Grid.Row="0" Text="Master of Information System "  FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
-                            <TextBlock Grid.Row="1" Text="Dekan :  "  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
+            <controls:PivotItem Tag="3" Margin="0" >
+                <ListBox x:Name="ListPascasarjana" ItemsSource="{Binding PascasarjanaCollection}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Tag="{Binding id_fakultas}" Background="#083A80" Height="100" Width="435" Margin="20,20,0,0" Tap="inputHandlerTap">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Margin="10,10,10,10" Source="{Binding img_ic_fakultas}" Grid.Column="0"/>
+                                <Grid Grid.Column="1" Margin="20,0,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Margin="0,20,0,0" Grid.Row="0" Text="{Binding judul_fakultas}"  FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                                        <TextBlock Text="Dekan :  "  FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                                        <TextBlock Text="{Binding nama_dekan}"  FontSize="14" HorizontalAlignment="Left"   />
+                                    </StackPanel>
 
-                        </Grid>
-                    </Grid>
-                    <Grid Background="#083A80" Height="100" Width="435" Margin="20,10,0,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Margin="10,10,10,10" Source="/Assets/DesainDan Komunikasi Visual.png" Grid.Column="0"/>
-                        <Grid Grid.Column="1" Margin="20,0,0,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Margin="0,20,0,0" Grid.Row="0" Text="Master of Design "  FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
-                            <TextBlock Grid.Row="1" Text="Dekan :  "  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
 
-                        </Grid>
-                    </Grid>
-                    <Grid Background="#083A80" Height="100" Width="435" Margin="20,10,0,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Margin="10,10,10,10" Source="/Assets/ekonomi.png" Grid.Column="0"/>
-                        <Grid Grid.Column="1" Margin="20,0,0,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Margin="0,20,0,0" Grid.Row="0" Text="Master of Management"  FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
-                            <TextBlock Grid.Row="1" Text="Dekan :  "  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"/>
-
-                        </Grid>
-                    </Grid>
-
-
-
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SetPascasarjanaFakultasIdCommand}" 
+                                                   CommandParameter="{Binding Path=SelectedItem, ElementName=ListPascasarjana}"/>
+                            <ec:NavigateToPageAction TargetPage="/Views/JurusanPage.xaml" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                 </ListBox>
 
             </controls:PivotItem>

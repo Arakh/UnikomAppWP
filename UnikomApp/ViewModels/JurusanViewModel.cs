@@ -18,6 +18,19 @@ namespace UnikomApp.ViewModels
         private ObservableCollection<Jurusan> jurusanCollection = new ObservableCollection<Jurusan>();
         private String namaFakultas;
         private String namaDekan;
+        private String idJenjang;
+
+        public String IdJenjang
+        {
+            get { return idJenjang; }
+            set 
+            { 
+                 idJenjang = value;
+                 RaisePropertyChanged("");           
+            }
+
+        }
+
         private int listIndex = -1;
 
         public String NamaDekan
@@ -58,13 +71,15 @@ namespace UnikomApp.ViewModels
 
         public void LoadURL()
         {
+            
             WebClient clientNews = new WebClient();
             clientNews.DownloadStringCompleted += new DownloadStringCompletedEventHandler(DownloadJurusanData);
-            clientNews.DownloadStringAsync(new Uri(URL.BASE + "getDataJurusanPrm.php?id_fakultas="+Navigation.Id));
+            clientNews.DownloadStringAsync(new Uri(URL.BASE + "getDataJurusanPrm.php?id_fakultas="+Navigation.Id+"& id_jenjang="+Navigation.Id_Jenjang));
         }
 
         private void DownloadJurusanData(object sender, DownloadStringCompletedEventArgs e)
         {
+          
             JObject jRoot = JObject.Parse(e.Result);
             JArray jItem = JArray.Parse(jRoot.SelectToken("item").ToString());
             foreach (JObject item in jItem)
@@ -73,11 +88,13 @@ namespace UnikomApp.ViewModels
                 jurusan.id_jurusan = item.SelectToken("id_jurusan").ToString();
                 jurusan.akreditasi = item.SelectToken("akreditasi").ToString();
                 jurusan.nama_jurusan = item.SelectToken("nama_jurusan").ToString();
-                jurusan.img_ic_jurusan = item.SelectToken("img_ic_jurusan").ToString();
+                jurusan.url_img = item.SelectToken("url_img").ToString();
                 NamaFakultas = jurusan.judul_fakultas = item.SelectToken("judul_fakultas").ToString();
                 NamaDekan = jurusan.nama_dekan = item.SelectToken("nama_dekan").ToString();
+
                 JurusanCollection.Add(jurusan);
             }
+
         }
 
         #region jurusan
@@ -111,7 +128,7 @@ namespace UnikomApp.ViewModels
             Jurusan selectedItemData = obj as Jurusan;
 
             if (selectedItemData != null)
-                Navigation.Id = selectedItemData.id_jurusan;
+                Navigation.Id_ = selectedItemData.id_jurusan;
 
             listIndex = -1;
         }

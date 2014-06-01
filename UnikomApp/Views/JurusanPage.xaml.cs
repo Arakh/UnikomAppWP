@@ -13,10 +13,27 @@ namespace UnikomApp.Views
 {
     public partial class PageJurusan : PhoneApplicationPage
     {
+        public static string idfakultas_;
+
+
         public PageJurusan()
         {
             InitializeComponent();
             DataContext = new JurusanViewModel();
         }
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            string msg = "";
+
+            if (NavigationContext.QueryString.TryGetValue("idFakultas", out msg))
+
+                idfakultas_ = msg;
+
+            // ------------ pilihan fakultas --------- 
+        }
+
+
     }
 }

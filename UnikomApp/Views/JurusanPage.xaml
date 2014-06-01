@@ -25,13 +25,13 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Image Source="/Assets/action menu.png" Grid.Column="0"/>
-                <Image Source="/Assets/logo small.png" Grid.Column="1"/>
+                <Image Source="/Assets/LogoSmall.png" Grid.Column="1"/>
                 <TextBlock Text="Fakultas" Grid.Column="2" VerticalAlignment="Center"/>
                 <Image Source="/Assets/pertanyaan.png" Grid.Column="3" HorizontalAlignment="Right" Stretch="None" Margin="0,0,10,0"/>
             </Grid>
             <Grid>
                 <Grid.Background>
-                    <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/1-the miracle-001.jpg"/>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/the miracle.jpg"/>
                 </Grid.Background>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>

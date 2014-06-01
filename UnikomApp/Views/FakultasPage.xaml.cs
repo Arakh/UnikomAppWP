@@ -17,6 +17,7 @@ namespace UnikomApp
 {
     public partial class menujurusan : PhoneApplicationPage
     {
+        public static string idJenjang;
          // Constructor
         public menujurusan()
         {
@@ -41,19 +42,20 @@ namespace UnikomApp
             PivotItem selecteditem = (PivotItem)e.AddedItems[0];
             string pivotTag = (string)selecteditem.Tag;
 
-            if (pivotTag.Equals("Diploma"))
+            if (pivotTag.Equals("1"))
             {
                 DiplomaBorder.Visibility = Visibility.Visible;
                 SarjanaBorder.Visibility = Visibility.Collapsed;
                 PascasarjanaBorder.Visibility = Visibility.Collapsed;
+                idJenjang = "1";
             }
-            if (pivotTag.Equals("Sarjana"))
+            if (pivotTag.Equals("2"))
             {
                 DiplomaBorder.Visibility = Visibility.Collapsed;
                 SarjanaBorder.Visibility = Visibility.Visible;
                 PascasarjanaBorder.Visibility = Visibility.Collapsed;
             }
-            if (pivotTag.Equals("PascaSarjana"))
+            if (pivotTag.Equals("3"))
             {
                 DiplomaBorder.Visibility = Visibility.Collapsed;
                 SarjanaBorder.Visibility = Visibility.Collapsed;

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace UnikomApp.Models
 {
-    class Jurusan
+    class DetailJurusan
     {
-        public string id_jurusan { get; set; }
+        public string id_jurusan_ { get; set; }
         public string nama_jurusan { get; set; }
         public string akreditasi { get; set; }
         public string img_jurusan { get; set; }
