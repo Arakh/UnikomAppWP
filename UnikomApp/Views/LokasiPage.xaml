@@ -5,6 +5,8 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UnikomApp="clr-namespace:UnikomApp.UserControl"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
     x:Class="Lokasi.MainPage"
     mc:Ignorable="d"
@@ -23,8 +25,8 @@
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Image Source="/Assets/actionmenu.png" Grid.Column="0" />
-                <Image Source="/Assets/logosmall.png" Grid.Column="1" />
+                <Image Source="/Assets/actionmenu.png" Grid.Column="0" Tap="Image_Tap" />
+                <Image Source="/Assets/logosmall.png" Grid.Column="1" Tap="Image_Tap" />
                 <TextBlock Text="Lokasi" Grid.Column="2" VerticalAlignment="Center"/>
                 <Image Source="/Assets/pertanyaan.png" Grid.Column="3" Margin="0,0,10,0" HorizontalAlignment="Right" Stretch="None" />
             </Grid>
@@ -38,6 +40,19 @@
             <Button Content="CHANGE" Click="OnCenterZoom_Click" HorizontalAlignment="Left" Margin="0,365,0,333"/>
             <Button Content="ANIMATE" Click="OnAnimate_Click" HorizontalAlignment="Left" Margin="0,435,0,263"/>-->
         </StackPanel>
+
+        <UnikomApp:NavDrawer x:Name="NavDrawer" HorizontalAlignment="Left" Margin="-400,0,0,0">
+            <UnikomApp:NavDrawer.RenderTransform>
+                <CompositeTransform x:Name="NavDrawTransform" />
+            </UnikomApp:NavDrawer.RenderTransform>
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener
+                DragDelta="GestureListener_DragDelta"
+                DragCompleted="GestureListener_DragCompleted"
+                />
+            </toolkit:GestureService.GestureListener>
+        </UnikomApp:NavDrawer>
+
     </Grid>
 
 </phone:PhoneApplicationPage>

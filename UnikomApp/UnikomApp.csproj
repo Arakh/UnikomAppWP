@@ -102,6 +102,7 @@
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\Downloads\Compressed\Json40r3\Bin\WindowsPhone\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\Visual Studio 2012\Projects\DapurMasak\DapurMasak\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
@@ -123,6 +124,10 @@
     <Compile Include="Views\DetailJurusanPage.xaml.cs">
       <DependentUpon>DetailJurusanPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Prestasi.cs" />
+    <Compile Include="ViewModels\FakultasViewModel.cs" />
+    <Compile Include="ViewModels\JurusanViewModel.cs" />
+    <Compile Include="ViewModels\PrestasiViewModel.cs" />
     <Compile Include="Views\FakultasPage.xaml.cs">
       <DependentUpon>FakultasPage.xaml</DependentUpon>
     </Compile>
@@ -272,6 +277,7 @@
     <Content Include="Assets\Backgroundfake.jpg" />
     <Content Include="Assets\Bantuan.png" />
     <Content Include="Assets\Beasiswa.png" />
+    <Content Include="Assets\bg.png" />
     <Content Include="Assets\DesainDan Komunikasi Visual.png" />
     <Content Include="Assets\Ekonomi.png" />
     <Content Include="Assets\FakultasDanJurusan.png" />

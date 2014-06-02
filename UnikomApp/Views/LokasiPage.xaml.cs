@@ -17,13 +17,17 @@ namespace Lokasi
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        bool isOpenNavDraw;
+        double marginLeft;
         // Constructor
         public MainPage()
         {
             InitializeComponent();
+            isOpenNavDraw = false;
+            marginLeft = -400;
             Map peta = new Map();
-            peta.Center = new GeoCoordinate(47.6097, -122.3331);
-            peta.ZoomLevel = 10;
+            peta.Center = new GeoCoordinate(-6.886773, 107.615392); //default 47.6097, -122.3331
+            peta.ZoomLevel = 1;
             kontenpeta.Children.Add(peta);
             posisi();
         }
@@ -87,12 +91,13 @@ namespace Lokasi
 
         private async void posisi()
         {
-            Geolocator myGeolocator = new Geolocator();
-            Geoposition myGeoposition = await myGeolocator.GetGeopositionAsync();
-            Geocoordinate myGeocoordinate = myGeoposition.Coordinate;
-            GeoCoordinate myGeoCoordinate = CoordinateConverter.ConvertGeocoordinate(myGeocoordinate);
-            this.mymap.Center = myGeoCoordinate;
-            this.mymap.ZoomLevel = 14;
+            //Geolocator myGeolocator = new Geolocator();
+            //Geoposition myGeoposition = await myGeolocator.GetGeopositionAsync();
+            //Geocoordinate myGeocoordinate = myGeoposition.Coordinate;
+            //GeoCoordinate myGeoCoordinate = CoordinateConverter.ConvertGeocoordinate(myGeocoordinate);
+            //this.mymap.Center = myGeoCoordinate;
+            this.mymap.Center = new GeoCoordinate(-6.886773, 107.615392);
+            this.mymap.ZoomLevel = 17;
 
             //penanda posisi
             Ellipse myCircle = new Ellipse();
@@ -103,10 +108,62 @@ namespace Lokasi
             MapOverlay myLocationOverlay = new MapOverlay();
             myLocationOverlay.Content = myCircle;
             myLocationOverlay.PositionOrigin = new Point(0.5, 0.5);
-            myLocationOverlay.GeoCoordinate = myGeoCoordinate;
+            myLocationOverlay.GeoCoordinate = new GeoCoordinate(-6.886773, 107.615392);
             MapLayer myLocationLayer = new MapLayer();
             myLocationLayer.Add(myLocationOverlay);
             mymap.Layers.Add(myLocationLayer);
+        }
+
+        private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavDrawer.SlideNavBarOpen.Begin();
+            marginLeft = 0;
+            NavDrawer.Margin = new Thickness(0, 0, 0, 0);
+            isOpenNavDraw = true;
+        }
+
+        private void GestureListener_DragDelta(object sender, DragDeltaGestureEventArgs e)
+        {
+            if (isOpenNavDraw)
+            {
+                NavDrawer.Margin = new Thickness(0, 0, 0, 0);
+                isOpenNavDraw = false;
+            }
+
+            double temp = marginLeft + e.HorizontalChange;
+            if (temp <= 0 && temp >= -400)
+            {
+                marginLeft += e.HorizontalChange;
+                NavDrawer.Margin = new Thickness(marginLeft, 0, 0, 0);
+            }
+        }
+
+        private void GestureListener_DragCompleted(object sender, DragCompletedGestureEventArgs e)
+        {
+            if (marginLeft >= -200)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(delegate
+                {
+                    while (marginLeft < 0)
+                    {
+                        marginLeft++;
+
+                        NavDrawer.Margin = new Thickness(marginLeft, 0, 0, 0);
+                    }
+                });
+            }
+            else
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(delegate
+                {
+                    while (marginLeft > -400)
+                    {
+                        marginLeft--;
+
+                        NavDrawer.Margin = new Thickness(marginLeft, 0, 0, 0);
+                    }
+                });
+            }
         }
     }
 }
