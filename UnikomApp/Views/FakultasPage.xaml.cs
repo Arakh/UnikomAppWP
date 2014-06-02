@@ -12,11 +12,15 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using UnikomApp.ViewModels;
+using UnikomApp.UserControl;
 
 namespace UnikomApp
 {
     public partial class menujurusan : PhoneApplicationPage
     {
+        bool isOpenNavDraw;
+        double marginLeft;
+
         public static string idJenjang;
          // Constructor
         public menujurusan()
@@ -91,6 +95,71 @@ namespace UnikomApp
         {
             Grid grid = (Grid)sender;
             NavigationService.Navigate(new Uri("/JurusanPage.xaml?idFakultas="+grid.Tag.ToString(), UriKind.Relative));
+        }
+
+        private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+          
+        }
+
+        private void GestureListener_DragDelta(object sender, DragDeltaGestureEventArgs e)
+        {
+            if (isOpenNavDraw)
+            {
+                NavDrawer.Margin = new Thickness(0, 0, 0, 0);
+                isOpenNavDraw = false;
+            }
+
+            double temp = marginLeft + e.HorizontalChange;
+            if (temp <= 0 && temp >= -400)
+            {
+                marginLeft += e.HorizontalChange;
+                NavDrawer.Margin = new Thickness(marginLeft, 0, 0, 0);
+            }
+        }
+
+        private void GestureListener_DragCompleted(object sender, DragCompletedGestureEventArgs e)
+        {
+            if (marginLeft >= -200)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(delegate
+                {
+                    while (marginLeft < 0)
+                    {
+                        marginLeft++;
+
+                        NavDrawer.Margin = new Thickness(marginLeft, 0, 0, 0);
+                    }
+                });
+            }
+            else
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(delegate
+                {
+                    while (marginLeft > -400)
+                    {
+                        marginLeft--;
+
+                        NavDrawer.Margin = new Thickness(marginLeft, 0, 0, 0);
+                    }
+                });
+            }
+        }
+
+        private void stackMenu_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavDrawer.SlideNavBarOpen.Begin();
+            marginLeft = 0;
+            NavDrawer.Margin = new Thickness(0, 0, 0, 0);
+            isOpenNavDraw = true;
+        }
+
+        private void Taptap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavDrawer.SlideNavBarOpen.Begin();
+            marginLeft = 0;
+            NavDrawer.Margin = new Thickness(0, 0, 0, 0);
+            isOpenNavDraw = true;
         }
 
     }

@@ -35,71 +35,70 @@
                 <Grid.Background>
                     <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/the miracle.jpg"/>
                 </Grid.Background>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Height="71">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="19*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Grid.Row="0" Margin="20,20,0,0" Text=""  FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300" Grid.ColumnSpan="2"/>
-                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
-                            <TextBlock Margin="20,0,0,0" Text="Dekan :  "  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBlock Margin="0,0,0,0" Text="" FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Grid>
+               
                 </Grid>
                 <Grid Grid.Row="1" Height="676" >
-                    <!-- ****************** -->
-                    <ListBox Margin="0,10,0,70" ItemsSource="{Binding DetailJurusanCollection}" x:Name="ListDetailJurusan">
+                <Grid.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/the miracle.jpg"/>
+                </Grid.Background>
+                <!-- ****************** -->
+                    <ListBox Margin="10,0,25,0" ItemsSource="{Binding DetailJurusanCollection}" x:Name="ListDetailJurusan">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Grid Tag="{Binding id_jurusan_}" Background="#083A80" Height="115" Width="435" Margin="20,20,0,0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding url_img}" Grid.Column="0" Stretch="UniformToFill" Width="114" Margin="-4,-7,0,-7"/>
-                                    <Grid Grid.Column="1" Margin="20,0,0,0">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="auto"/>
-                                            <RowDefinition Height="auto"/>
-                                            <RowDefinition Height="auto"/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Margin="0,20,0,0" Grid.Row="0" Text="{Binding nama_jurusan}"  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="250"/>
+                                <Grid Tag="{Binding id_jurusan_}" Height="auto" Width="435" Margin="20,20,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                        <TextBlock Margin="0,10,0,0" Grid.Row="0" Text="{Binding nama_jurusan}"  FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="250"/>
                                         <StackPanel Orientation="Horizontal" Grid.Row="1">
                                             <TextBlock Text="Akreditasi : "  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center" />
                                             <TextBlock Text="{Binding akreditasi}"  FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center" />
                                         </StackPanel>
+                                        <Image Source="{Binding url_img}" Grid.Row="2" Stretch="UniformToFill" Width="435" Height="auto" Margin="0,8,0,0"/>
+                                <StackPanel Grid.Row="3">
+                                    <StackPanel Orientation="Horizontal" Width="auto">
+                                        <TextBlock Margin="0,10,0,0" Text="Kaprodi : "  FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="auto"/>
 
-                                    </Grid>
-                                    <Grid Grid.Column="2">
+                                        <TextBlock Margin="0,10,0,0"  Text="{Binding kaprodi}"  FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="auto"/>
+                                    </StackPanel>
+                                    
+                                    <StackPanel Orientation="Horizontal" Width="auto">
+                                        <TextBlock Margin="0,10,0,0" Text="Sekretaris : "  FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="auto"/>
 
-                                    </Grid>
-                                </Grid>
+                                        <TextBlock Margin="0,5,0,0" Text="{Binding sekretaris}"  FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="auto"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Grid.Row="4">
+                                    <RichTextBox VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,12,0,0" Height="auto">
+                                        <Paragraph>
+                                            <Run FontSize="17" Text="{Binding desc_jurusan}"/>
+                                        </Paragraph>
+                                        
+                                    </RichTextBox>
+
+
+                                </StackPanel>
+
+
+                            </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
 
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
-                                <i:InvokeCommandAction Command="{Binding SetDetailJurusanIdCommand}" 
-                                                   CommandParameter="{Binding Path=SelectedItemDetailJurusan, ElementName=ListDetailJurusan}"/>
+                                <i:InvokeCommandAction Command="{Binding SetJurusanIdCommand}" 
+                                                   CommandParameter="{Binding Path=SelectedItemJurusan, ElementName=ListDetailJurusan}"/>
                                 <ec:NavigateToPageAction TargetPage="/Views/DetailJurusanPage.xaml" />
                             </i:EventTrigger>
                         </i:Interaction.Triggers>                       
                     </ListBox>
 
                 </Grid>
-            </Grid>
+         
 
         </StackPanel>
     </Grid>

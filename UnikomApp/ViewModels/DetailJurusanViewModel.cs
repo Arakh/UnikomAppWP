@@ -44,7 +44,7 @@ namespace UnikomApp.ViewModels
 
             WebClient clientNews = new WebClient();
             clientNews.DownloadStringCompleted += new DownloadStringCompletedEventHandler(DownloadDetailJurusanData);
-            clientNews.DownloadStringAsync(new Uri(URL.BASE + "getdatajurusan.php?id_jurusan="+Navigation.Id_));
+            clientNews.DownloadStringAsync(new Uri(URL.BASE + "getdatajurusan.php?id_jurusan="+Navigation.Id));
         }
 
         private void DownloadDetailJurusanData(object sender, DownloadStringCompletedEventArgs e)
@@ -59,6 +59,8 @@ namespace UnikomApp.ViewModels
                 detailjurusan.akreditasi = item.SelectToken("akreditasi").ToString();
                 detailjurusan.nama_jurusan = item.SelectToken("nama_jurusan").ToString();
                 detailjurusan.url_img = item.SelectToken("url_img").ToString();
+                detailjurusan.kaprodi = item.SelectToken("kaprodi").ToString();
+                detailjurusan.sekretaris = item.SelectToken("sekretaris").ToString();
                 detailjurusan.situs = item.SelectToken("situs").ToString();
                 detailjurusan.kurikulum = item.SelectToken("kurikulum").ToString();
                 detailjurusan.desc_jurusan = item.SelectToken("desc_jurusan").ToString();
@@ -98,7 +100,7 @@ namespace UnikomApp.ViewModels
             DetailJurusan selectedItemData = obj as DetailJurusan;
 
             if (selectedItemData != null)
-                Navigation.Id_ = selectedItemData.id_jurusan_;
+                Navigation.Id = selectedItemData.id_jurusan_;
 
             listIndex = -1;
         }

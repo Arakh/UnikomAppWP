@@ -21,18 +21,7 @@ namespace UnikomApp.Views
             InitializeComponent();
             DataContext = new JurusanViewModel();
         }
-        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-
-            string msg = "";
-
-            if (NavigationContext.QueryString.TryGetValue("idFakultas", out msg))
-
-                idfakultas_ = msg;
-
-            // ------------ pilihan fakultas --------- 
-        }
+       
 
 
     }

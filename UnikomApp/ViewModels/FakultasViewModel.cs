@@ -153,7 +153,7 @@ namespace UnikomApp.ViewModels
 
             if (selectedItemData != null)
             {
-                Navigation.Id = selectedItemData.id_fakultas;
+                Navigation.Id_ = selectedItemData.id_fakultas;
                 Navigation.Id_Jenjang = "2";
             }
 
@@ -180,7 +180,7 @@ namespace UnikomApp.ViewModels
             Fakultas selectedItemData = obj as Fakultas;
 
             if (selectedItemData != null)
-                Navigation.Id = selectedItemData.id_fakultas;
+                Navigation.Id_ = selectedItemData.id_fakultas;
                 Navigation.Id_Jenjang = "1";
             listIndex = -1;
         }
@@ -203,7 +203,7 @@ namespace UnikomApp.ViewModels
             Fakultas selectedItemData = obj as Fakultas;
 
             if (selectedItemData != null)
-            Navigation.Id = selectedItemData.id_fakultas;
+            Navigation.Id_ = selectedItemData.id_fakultas;
             Navigation.Id_Jenjang = "3";
             listIndex = -1;
         }

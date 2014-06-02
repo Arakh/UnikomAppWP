@@ -90,7 +90,7 @@
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding SetJurusanIdCommand}" 
-                                                   CommandParameter="{Binding Path=SelectedItemJurusan, ElementName=ListJurusan}"/>
+                                                   CommandParameter="{Binding Path=SelectedItem, ElementName=ListJurusan}"/>
                                 <ec:NavigateToPageAction TargetPage="/Views/DetailJurusanPage.xaml" />
                             </i:EventTrigger>
                         </i:Interaction.Triggers>

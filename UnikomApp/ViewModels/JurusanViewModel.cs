@@ -74,7 +74,7 @@ namespace UnikomApp.ViewModels
             
             WebClient clientNews = new WebClient();
             clientNews.DownloadStringCompleted += new DownloadStringCompletedEventHandler(DownloadJurusanData);
-            clientNews.DownloadStringAsync(new Uri(URL.BASE + "getDataJurusanPrm.php?id_fakultas="+Navigation.Id+"& id_jenjang="+Navigation.Id_Jenjang));
+            clientNews.DownloadStringAsync(new Uri(URL.BASE + "getDataJurusanPrm.php?id_fakultas="+Navigation.Id_+"& id_jenjang="+Navigation.Id_Jenjang));
         }
 
         private void DownloadJurusanData(object sender, DownloadStringCompletedEventArgs e)
@@ -128,7 +128,7 @@ namespace UnikomApp.ViewModels
             Jurusan selectedItemData = obj as Jurusan;
 
             if (selectedItemData != null)
-                Navigation.Id_ = selectedItemData.id_jurusan;
+                Navigation.Id = selectedItemData.id_jurusan;
 
             listIndex = -1;
         }
