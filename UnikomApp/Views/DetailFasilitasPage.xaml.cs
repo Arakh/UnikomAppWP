@@ -7,14 +7,16 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using UnikomApp.ViewModels;
 
 namespace UnikomApps
 {
-    public partial class PageParkir : PhoneApplicationPage
+    public partial class PageDetailFasilitas : PhoneApplicationPage
     {
-        public PageParkir()
+        public PageDetailFasilitas()
         {
             InitializeComponent();
+            DataContext = new DetailFasilitasViewModel();
         }
     }
 }

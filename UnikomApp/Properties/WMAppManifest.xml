@@ -6,7 +6,7 @@
     <Capabilities>
     </Capabilities>
     <Tasks>
-      <DefaultTask Name="_default" NavigationPage="Views/LoginPage.xaml" />
+      <DefaultTask Name="_default" NavigationPage="Views/HymneMarsPage.xaml" />
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="UnikomAppToken" TaskName="_default">

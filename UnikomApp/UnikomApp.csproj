@@ -103,6 +103,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\Downloads\Compressed\Json40r3\Bin\WindowsPhone\Newtonsoft.Json.dll</HintPath>
       <HintPath>..\..\..\Visual Studio 2012\Projects\DapurMasak\DapurMasak\Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Users\Firdaus Akhmad M\Documents\Visual Studio 2012\Projects\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
@@ -128,6 +129,15 @@
     <Compile Include="ViewModels\FakultasViewModel.cs" />
     <Compile Include="ViewModels\JurusanViewModel.cs" />
     <Compile Include="ViewModels\PrestasiViewModel.cs" />
+    <Compile Include="Models\DetailFasilitas.cs" />
+    <Compile Include="Models\Fakultas.cs" />
+    <Compile Include="Models\Jurusan.cs" />
+    <Compile Include="ViewModels\DetailFasilitasViewModel.cs" />
+    <Compile Include="ViewModels\FakultasViewModel.cs" />
+    <Compile Include="ViewModels\JurusanViewModel.cs" />
+    <Compile Include="Views\DetailFasilitasPage.xaml.cs">
+      <DependentUpon>DetailFasilitasPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FakultasPage.xaml.cs">
       <DependentUpon>FakultasPage.xaml</DependentUpon>
     </Compile>
@@ -159,9 +169,6 @@
     <Compile Include="Views\LokasiPage.xaml.cs">
       <DependentUpon>LokasiPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ParkirPage.xaml.cs">
-      <DependentUpon>ParkirPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\PrestasiPage.xaml.cs">
       <DependentUpon>PrestasiPage.xaml</DependentUpon>
     </Compile>
@@ -186,6 +193,9 @@
     <Page Include="Views\DetailJurusanPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\DetailFasilitasPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\FakultasPage.xaml">
       <SubType>Designer</SubType>
@@ -228,10 +238,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LokasiPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\ParkirPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

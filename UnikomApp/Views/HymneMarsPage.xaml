@@ -16,7 +16,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Backgroundfake.jpg"/>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/1-the miracle-001.jpg"/>
         </Grid.Background>
         <Grid x:Name="LayoutRoot" Background="#CC000000">
             <StackPanel Margin="0,0,0,568">
@@ -24,13 +24,11 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="/Assets/back.png" Grid.Column="0"/>
-                    <Image Source="/Assets/Logosmall.png" Grid.Column="1" Height="70"/>
-                    <TextBlock Grid.Column="2" Text="Hymne &amp; Mars" VerticalAlignment="Center"/>
-                    <Image Source="/Assets/Pertanyaan.png" Grid.Column="3" HorizontalAlignment="Right" Stretch="None" Margin="0,0,10,0"/>
+                    <Image Source="/Assets/Logosmall.png" Grid.Column="0" Height="70" Margin="15,0,0,0"/>
+                    <TextBlock Grid.Column="1" Text="Hymne &amp; Mars" VerticalAlignment="Center"/>
+                    <Image Source="/Assets/Pertanyaan.png" Grid.Column="2" HorizontalAlignment="Right" Stretch="None" Margin="0,0,10,0"/>
                 </Grid>
 
                 <Grid Height="60">
@@ -104,29 +102,33 @@
                             </StackPanel>
                         </Grid>
                         <ListBox Height="430">
-                            <RichTextBox VerticalAlignment="Top" Margin="0,0,185,0">
-                                <Paragraph FontSize="15">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            <RichTextBox VerticalAlignment="Top" Width="294">
+                                <Paragraph FontSize="18">
+                                    Terbit sang surya di ufuk timur
+                                    <LineBreak/>Menyongsong masa depan
+                                    <LineBreak/>Langkah penuh harapan
+                                    <LineBreak/>Masa indah gemilang
                                 </Paragraph>
-                                <Paragraph FontSize="15">
+                                <Paragraph FontSize="12">
                                 </Paragraph>
-                                <Paragraph FontSize="15">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                <Paragraph FontSize="18">
+                                    Menuntut ilmu meraih cita
+                                    <LineBreak/>Dalam semangat menyala
                                 </Paragraph>
-                                <Paragraph FontSize="15">
+                                <Paragraph FontSize="12">
                                 </Paragraph>
-                                <Paragraph FontSize="15">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                <Paragraph FontSize="18">
+                                    Dibina dan ditempat
+                                    <LineBreak/>Demi Nusa dan Bangsa
                                 </Paragraph>
-                                <Paragraph FontSize="15">
+                                <Paragraph FontSize="12">
                                 </Paragraph>
-                                <Paragraph FontSize="15">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                </Paragraph>
-                                <Paragraph FontSize="15">
-                                </Paragraph>
-                                <Paragraph FontSize="15">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                <Paragraph FontSize="18">
+                                    Puji syukur pada Yang Esa
+                                    <LineBreak/>Atas karunia-Nya
+                                    <LineBreak/>Semoga kan tetap jaya
+                                    <LineBreak/>UNIKOM tercinta
+                                    <LineBreak/>Semoga kan tetap jaya UNIKOM tercinta...
                                 </Paragraph>
                             </RichTextBox>
                         </ListBox>
@@ -135,7 +137,63 @@
 
                 <!--Pivot item two-->
                 <phone:PivotItem Tag="Mars" Margin="12,0">
-
+                    <StackPanel Orientation="Vertical">
+                        <Grid Height="80" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Vertical" Grid.Column="0" Margin="10,0,0,0">
+                                <TextBlock FontSize="15" Text="Do = E"/>
+                                <TextBlock FontSize="15" Text="2/4"/>
+                                <TextBlock FontSize="15" Text="Semangat"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,10,0">
+                                <TextBlock FontSize="15" Text="Cipt. Yogi Raf"/>
+                                <TextBlock FontSize="15" Text="Arr. Yogi Raf"/>
+                            </StackPanel>
+                        </Grid>
+                        <ListBox VerticalAlignment="Bottom">
+                            <RichTextBox VerticalAlignment="Top">
+                                <Paragraph FontSize="18">
+                                    Universitas Komputer Indonesia
+                                    <LineBreak/>Dengan langkah tegap berjalan
+                                    <LineBreak/>Menuju arah yang terdepan
+                                    <LineBreak/>Unggul dalam ilmu pengetahuan
+                                </Paragraph>
+                                <Paragraph FontSize="12">
+                                </Paragraph>
+                                <Paragraph FontSize="18">
+                                    Universitas Komputer Indonesia
+                                    <LineBreak/>Tingkatkan sumberdaya manusia
+                                    <LineBreak/>Untuk kepentingan bangsa
+                                    <LineBreak/>Demi Indonesia kita tercinta
+                                </Paragraph>
+                                <Paragraph FontSize="12">
+                                </Paragraph>
+                                <Paragraph FontSize="18">
+                                    Tak goyah, tak gentar
+                                    <LineBreak/>Menembus tantangan
+                                    <LineBreak/>UNIKOM maju berjaya
+                                </Paragraph>
+                                <Paragraph FontSize="12">
+                                </Paragraph>
+                                <Paragraph FontSize="18">
+                                    Menyala di dada
+                                    <LineBreak/>Semangat membara
+                                    <LineBreak/>UNIKOM jaya selamanya
+                                </Paragraph>
+                                <Paragraph FontSize="12">
+                                </Paragraph>
+                                <Paragraph FontSize="18">
+                                    Universitas Komputer Indonesia
+                                    <LineBreak/>Tingkatkan sumberdaya manusia
+                                    <LineBreak/>Untuk kepentingan bangsa
+                                    <LineBreak/>Demi Indonesia kita tercinta
+                                </Paragraph>
+                            </RichTextBox>
+                        </ListBox>
+                    </StackPanel>
                 </phone:PivotItem>
 
             </phone:Pivot>
@@ -148,6 +206,8 @@
             Before shipping remove this XAML and the image itself.-->
             <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" IsHitTestVisible="False" />-->
         </Grid>
+        
+        <!-- Fitur Music (Cooming Soon)
         <Grid Height="75" Background="#7F000000" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -157,6 +217,6 @@
             <Image Width="50" Source="/Assets/pause.png" Grid.Column="0"/>
             <Image Width="50" Source="/Assets/play.png" Grid.Column="1"/>
             <Image Width="50" Source="/Assets/stop.png" Grid.Column="2"/>
-        </Grid>
+        </Grid>-->
     </Grid>
 </phone:PhoneApplicationPage>
